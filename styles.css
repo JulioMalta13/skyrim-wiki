@@ -1,64 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
 body {
-  background-color: #1a1a1a; 
-  color: #d8d8d8; 
-  font-family: Arial, sans-serif; 
+  background-color: #1a1a1a;
+  color: #d8d8d8;
+  font-family: Arial, sans-serif;
 }
 
-h1 { 
-  font-family: 'Cinzel', serif; 
+h1 {
+  font-family: 'Cinzel', serif;
   color: #ffffff;
-  border-bottom: 1px solid #727272; 
+  border-bottom: 1px solid #727272;
   padding-bottom: 0px;
 }
 
 h2 {
-  font-family: 'Cinzel', serif; 
+  font-family: 'Cinzel', serif;
   color: #ffffff;
-  border-bottom: 1px solid #727272; 
+  border-bottom: 1px solid #727272;
   padding-bottom: 5px;
+  text-align: center;
+  /* ADICIONADO: Centraliza o texto no meio da linha (risco) */
+}
+
+/* ADICIONADO: Criei a regra do h3 para que o "Sobre" e o "Pesquisar" também tenham a linha e fiquem centralizados */
+h3 {
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  border-bottom: 1px solid #727272;
+  padding-bottom: 5px;
+  text-align: center;
+  margin: 0;
+  /* Remove a margem padrão para alinhar melhor na barra de pesquisa */
 }
 
 a {
-  color: #8da4c4; 
-  text-decoration: none; 
+  color: #8da4c4;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #ffffff; /* Fica branco quando passa o mouse por cima */
+  color: #ffffff;
 }
 
 li a {
-  color: #a8983b; 
-  text-decoration: none; 
-} /* Cor dos links na lista */
-
-a {
-  color:  #a8983b; 
-  text-decoration: none; 
-} 
+  color: #a8983b;
+  text-decoration: none;
+}
 
 .cabecalho {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  /* CORRIGIDO: Alinha o conteúdo horizontalmente ao centro */
+  align-items: center;
+  justify-content: center;
+  /* ADICIONADO: Empurra os itens flex para o centro */
+  gap: 20px;
 }
 
 .cabecalho img {
-    width: 50px;
-    height: auto;
+  width: 50px;
+  height: auto;
 }
 
 .cabecalho h1 {
-    margin: 0;
+  margin: 0;
+  align-self: center;
+  max-width: 100%;
+}
+
+.search-container {
+  position: absolute;
+  /* ADICIONADO: Tira a barra do fluxo normal e a faz flutuar */
+  top: 30px;
+  /* ADICIONADO: Distância do topo do container */
+  right: 20px;
+  /* ADICIONADO: Distância da direita do container */
+  /* Você pode remover o display: flex, gap, etc., dessa classe pai se quiser, 
+     pois o formulário dentro dela já está cuidando do alinhamento */
+}
+
+/* ADICIONADO: Transforma o formulário em Flexbox para alinhar caixa de texto e botão perfeitamente ao meio */
+.search-container form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CORRIGIDO: Removido o ponto (.) antes da palavra input */
+input[type="text"] {
+  padding: 3px 10px;
+  /* REDUZIDO: Menos espaço interno deixa a caixa menor */
+  border: 1px solid #0a0a0a;
+  border-radius: 30px;
+  font-size: 14px;
+  /* ADICIONADO: Fonte um pouco menor */
+}
+
+/* CORRIGIDO: Removido o ponto (.) antes da palavra button */
+button {
+  background-color: #030303;
+  color: #d8d8d8;
+  border: 1px solid #706f29;
+  padding: 5px 15px;
+  /* REDUZIDO: Botão mais fino e delicado */
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  /* ADICIONADO: Fonte um pouco menor */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  /* ADICIONADO: Transforma o container no "ponto de referência" */
 }
 
 footer {
-    margin-top: 50px;
-    padding-top: 15px;
-    border-top: 1px solid #555;
-    color: #999;
-    font-size: 13px;
-    text-align: center;
+  margin-top: 50px;
+  padding-top: 15px;
+  border-top: 1px solid #555;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  /* Esta é a mágica que remove as bolinhas pretas */
+  padding: 0;
+  /* Remove o recuo padrão do navegador */
+  margin-top: 15px;
+  /* Dá um espaço entre o título e a lista */
+  margin-bottom: 30px;
+  /* Dá um espaço entre o fim da lista e o próximo título */
+  text-align: center;
+  /* Centraliza os links para acompanharem os títulos que centralizamos antes */
+}
+
+li {
+  margin-bottom: 10px;
+  /* Dá um "respiro" (espaço) entre um link e outro para facilitar o clique */
+}
+
+.link-sobre {
+  display: block;
+  /* Transforma o link em um bloco que ocupa a largura total */
+  text-align: center;
+  /* Agora sim, centraliza o texto dentro desse bloco */
+  margin-top: 15px;
+  /* Dá um espacinho em relação à linha divisória */
+  color: #a8983b;
+  text-decoration: none;
 }
